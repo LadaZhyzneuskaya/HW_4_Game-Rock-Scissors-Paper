@@ -30,15 +30,17 @@ const getUserChoise = () => {
 
 const getComputerChoise = () => {
   const computerChoise = Math.floor(Math.random() * 3 + 1);
-  if (computerChoise === 1) {
-    alert('Computer move is: rock');
-    return 'rock';
-  } else if (computerChoise === 2) {
-    alert('Computer move is: scissors');
-    return 'scissors';
-  } else if (computerChoise === 3) {
-    alert('Computer move is: paper');
-    return 'paper';
+
+  switch (computerChoise) {
+    case 1:
+      alert('Computer move is: rock');
+      return 'rock';
+    case 2:
+      alert('Computer move is: scissors');
+      return 'scissors';
+    case 3:
+      alert('Computer move is: paper');
+      return 'paper';
   }
 }
 
