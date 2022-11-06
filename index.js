@@ -9,22 +9,23 @@ const createUserName = () => {
 }
 
 const getUserChoise = () => {
-  do {
-    userChoice = prompt('Rock, Scissors, Paper... Please make your move');
-  
-    if (userChoice === null) {
-      alert('You aborted this game. To start new game just refresh the page.');
-    }
-  
-    const modifyUserChoice = userChoice
-      .trim()
-      .toLowerCase();
-  
-    if (modifyUserChoice === 'rock' || modifyUserChoice === 'scissors'|| modifyUserChoice === 'paper') {
-      return modifyUserChoice;
-    }
+  userChoice = prompt('Rock, Scissors, Paper... Please make your move');
+
+  if (userChoice === null) {
+    alert('You aborted this game. To start new game just refresh the page.');
   }
-  while (userChoice !== 'rock' || userChoice !== 'scissors'|| userChoice !== 'paper'); 
+
+  const modifyUserChoice = userChoice
+    .trim()
+    .toLowerCase();
+
+  if (modifyUserChoice === 'rock' || modifyUserChoice === 'scissors'|| modifyUserChoice === 'paper') {
+    return modifyUserChoice;
+  }
+
+  if (userChoice !== 'rock' || userChoice !== 'scissors'|| userChoice !== 'paper') {
+    getUserChoise();
+  } 
 }
 
 const getComputerChoise = () => {
